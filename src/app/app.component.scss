@@ -1,0 +1,13 @@
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+main {
+    padding: 80px 40px 40px 40px;
+    height: calc(100% - 80px);
+}
