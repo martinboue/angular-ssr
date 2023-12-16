@@ -11,7 +11,7 @@
         @for (article of articles; track article.id) {
             <p-card subheader="by {{article.author}} - {{article.publicationDate}}" class="w-full">
                 <ng-template pTemplate="title">
-                    <a [routerLink]="['/', 'ssg', article.id]" class="no-underline text-primary">{{article.title}}</a>
+                    <a [routerLink]="article.id" class="no-underline text-primary">{{article.title}}</a>
                 </ng-template>
                 <p class="m-0">{{article.description}}</p>
             </p-card>

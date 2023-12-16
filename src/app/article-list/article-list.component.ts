@@ -5,7 +5,7 @@ import { ArticleService } from '../services/article.service';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { finalize } from 'rxjs';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
 
 

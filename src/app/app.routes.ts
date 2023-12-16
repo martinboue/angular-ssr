@@ -17,19 +17,43 @@ export const routes: Routes = [
         redirectTo: '/csr', 
         pathMatch: 'full' 
     },
+    // CSR
     { 
         path: 'csr', 
         component: ArticleListComponent, 
         title: "CSR - Client-Side Rendering"
     },
+    {
+        path: 'csr/:id',
+        title: 'CSR - Client-Side Rendering',
+        component: ArticleComponent,
+        resolve: {
+            article: articleResolver
+        }
+    },
+    // SSR
     { 
         path: 'ssr', 
         component: ArticleListComponent, 
         title: "SSR - Server-Side Rendering"
     },
     {
+        path: 'ssr/:id',
+        title: 'SSR - Server-Side Rendering',
+        component: ArticleComponent,
+        resolve: {
+            article: articleResolver
+        }
+    },
+    // SSG
+    { 
+        path: 'ssg', 
+        component: ArticleListComponent, 
+        title: 'SSG - Static Site Generation',
+    },
+    {
         path: 'ssg/:id',
-        title: 'SSG -Static Site Generation',
+        title: 'SSG - Static Site Generation',
         component: ArticleComponent,
         resolve: {
             article: articleResolver

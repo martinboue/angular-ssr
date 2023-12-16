@@ -15,7 +15,8 @@ import { MenuItem } from 'primeng/api';
 export class AppComponent {
 
   menus: MenuItem[] = [
-    { label: "Client-Side Rendering", routerLink: "csr" },
-    { label: "Server-Side Rendering", routerLink: "ssr" },
+    { label: "Client-Side Rendering (CSR)", routerLink: "csr" },
+    { label: "Server-Side Rendering (SSR)", routerLink: "ssr" },
+    { label: "Static-Site Generation (SSG)", routerLink: "ssg" },
   ]
 }
