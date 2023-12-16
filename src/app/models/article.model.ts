@@ -1,3 +1,4 @@
+/** Article data model */
 export interface Article {
     id: string,
     title: string,

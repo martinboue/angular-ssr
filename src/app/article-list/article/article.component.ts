@@ -22,6 +22,8 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     console.log(`Init ArticleComponent from platform=${this.platformId} and URL=${this.router.url}`);
+    
+    // Article was fetch with resolver and is accessible from route data.
     this.article = this.route.snapshot.data['article'];
   }
 

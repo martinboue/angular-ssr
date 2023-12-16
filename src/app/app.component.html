@@ -1,8 +1,16 @@
 <header>
+  <!-- Navigation bar -->
   <nav>
     <p-tabMenu [model]="menus"></p-tabMenu>
   </nav>
 </header>
+
 <main>
+  <!-- Loading overlay for resolvers -->
+  <div *ngIf="loading" class="overlay w-full h-full flex justify-content-center align-items-center">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+
+  <!-- Page content router -->
   <router-outlet></router-outlet>
 </main>

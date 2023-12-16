@@ -17,17 +17,20 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
-
+  
   // Middlewares
-  server.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+  server.use(morgan(':method :url :status :res[content-length] B - :response-time ms'));
 
   // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
+  // server.all('/api/**', (req, res) => { });
 
   // Serve static files from /browser folder
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'
   }));
+
+  // Serve index.html file for CSR routes
+  server.get(['/', '/csr', '/csr/**'], (req, res) => res.sendFile(indexHtml));
 
   // All regular routes use the Angular engine
   server.get('*', (req, res, next) => {

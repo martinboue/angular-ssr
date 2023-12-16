@@ -1,9 +1,10 @@
-
+<!-- Header -->
 <div class="flex justify-content-between align-items-center">
-    <h1>Articles</h1>
+    <h1>Articles using {{mode}}</h1>
     <p-button icon="pi pi-refresh" label="Reload" (click)="loadArticles()"></p-button>
 </div>
 
+<!-- Content -->
 <div class="flex flex-column align-items-center gap-5">
     @if (loading) {
         <p-progressSpinner></p-progressSpinner>
