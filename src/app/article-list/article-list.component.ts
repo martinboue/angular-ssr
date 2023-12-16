@@ -5,7 +5,7 @@ import { ArticleService } from '../services/article.service';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { finalize } from 'rxjs';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
 
 
@@ -22,12 +22,13 @@ export class ArticleListComponent implements OnInit {
   loading: boolean = false;
 
   constructor(
+    private router: Router,
     private articleService: ArticleService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
-    console.log("Init SsrComponent from", this.platformId);
+    console.log(`Init ArticleListComponent from platform=${this.platformId} and URL=${this.router.url}`);
     this.loadArticles();
   }
  

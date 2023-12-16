@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Article } from '../../models/article.model';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 
 @Component({
@@ -15,12 +15,13 @@ export class ArticleComponent implements OnInit {
   article!: Article;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
-    console.log("Init ArticleComponent from", this.platformId);
+    console.log(`Init ArticleComponent from platform=${this.platformId} and URL=${this.router.url}`);
     this.article = this.route.snapshot.data['article'];
   }
 
