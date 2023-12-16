@@ -1,17 +1,9 @@
-
-export enum ArticleStatus {
-    draft = "Draft",
-    published = "Published",
-    archived = "Archived"
-}
-
 export interface Article {
-    id: number,
+    id: string,
     title: string,
     description: string,
-    tags: string[]
     author: string,
     publicationDate: string,
-    lastUpdateDate: string,
-    status: ArticleStatus,
+    content: string,
+    imageUrl: string
 }

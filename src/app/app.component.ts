@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { SsrComponent } from './ssr/ssr.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { MenuItem } from 'primeng/api';
 
@@ -9,14 +8,14 @@ import { MenuItem } from 'primeng/api';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, SsrComponent, TabMenuModule],
+  imports: [CommonModule, RouterOutlet, TabMenuModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
 
   menus: MenuItem[] = [
-    { label: "CSR" },
-    { label: "SSR" },
+    { label: "Client-Side Rendering", routerLink: "csr" },
+    { label: "Server-Side Rendering", routerLink: "ssr" },
   ]
 }
