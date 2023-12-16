@@ -28,7 +28,7 @@ export const routes: Routes = [
         title: "SSR - Server-Side Rendering"
     },
     {
-        path: 'ssr/:id',
+        path: 'ssg/:id',
         title: 'SSG -Static Site Generation',
         component: ArticleComponent,
         resolve: {
