@@ -4,10 +4,7 @@ import { Observable, delay } from 'rxjs';
 import { Article } from '../models/article.model';
 
 // We use a mock server which serve pre-generated static JSON responses.
-const BASE_PATH = "https://657cd291853beeefdb9a03df.mockapi.io";
-
-// We use a delay to simulate computing time.
-const DELAY = 1000; // ms
+const BASE_PATH = "https://8a545a04-e00b-4eb4-a2a5-566b9f784f46.mock.pstmn.io";
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +17,12 @@ export class ArticleService {
 
   /** Get list of all articles */
   public getArticles(): Observable<Article[]> {
-    return this.httpClient.get<Article[]>(`${BASE_PATH}/api/articles`).pipe(delay(DELAY));
+    return this.httpClient.get<Article[]>(`${BASE_PATH}/api/articles`);
   }
   
   /** Get an article with its ID */
   public getArticle(id: string): Observable<Article> {
-    return this.httpClient.get<Article>(`${BASE_PATH}/api/articles/${id}`).pipe(delay(DELAY));
+    return this.httpClient.get<Article>(`${BASE_PATH}/api/articles/${id}`);
   }
 
 }
